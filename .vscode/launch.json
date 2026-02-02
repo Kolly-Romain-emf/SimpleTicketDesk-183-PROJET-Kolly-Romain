@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Test API",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:api"],
+      "cwd": "${workspaceFolder}/server",
+      "console": "integratedTerminal",
+      "env": {
+        "API_BASE_URL": "http://localhost:8080"
+      }
+    },
+    {
+      "name": "Seed Demo Data",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/scripts/seed-demo.js",
+      "cwd": "${workspaceFolder}/server",
+      "console": "integratedTerminal"
+    }
+  ]
+}

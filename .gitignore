@@ -1,0 +1,8 @@
+# Environnements locaux
+.env
+.env.*
+!.env.example
+
+# Dependances Node.js
+node_modules/
+*/node_modules/

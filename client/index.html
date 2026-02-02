@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleTicketDesk</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Inter as a close match to system-ui/modern sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        window.onerror = function (msg, url, line) {
+            if (url && (url.includes('content.js') || url.startsWith('chrome-extension://') || url.startsWith('ms-browser-extension://') || url.startsWith('edge-extension://'))) {
+                return false;
+            }
+            document.body.innerHTML = '<div style="color:red; background:white; position:fixed; top:0; left:0; padding:20px; z-index:9999; border: 5px solid red; font-size: 20px;">JS Error: ' + msg + ' at ' + line + '</div>';
+            return false;
+        };
+        window.addEventListener('unhandledrejection', function (event) {
+            document.body.innerHTML += '<div style="color:red; background:white; position:fixed; top:50px; left:0; padding:20px; z-index:9999; border: 5px solid orange; font-size: 20px;">Promise Rejection: ' + event.reason + '</div>';
+        });
+    </script>
+    <div id="app">
+        <!-- Views will be rendered here -->
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/controllers/appController.js?v=1"></script>
+</body>
+
+</html>
